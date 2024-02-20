@@ -80,14 +80,12 @@ getHistorique()
                   <img className="h-12 w-12 flex-none rounded-full bg-gray-50" src={pdf.imageUrl} alt="" />
                   <div className="min-w-0 flex-auto">
 
-                    <p className="mt-1 truncate text-xs leading-5 text-gray-500">{`${pdf.id } du ${pdf.created_at}`}</p>
+                    <p className="mt-1 truncate text-xs leading-5 text-gray-500">{`${pdf.name }`}</p>
+                    <p className="mt-1 truncate text-xs leading-5 text-gray-500">Généré le :{`${ pdf.created_at }/20`}</p>
+
                   </div>
                 </div>
                 <div className="hidden shrink-0 sm:flex sm:flex-col sm:items-end">                  
-                    <p className="mt-1 text-xs leading-5 text-gray-500">
-                      Généré le : <time dateTime={pdf.id}></time>
-                    </p>
-
                         <button
                             className="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                         onClick={(e)=>goDelete(e,pdf.id)}

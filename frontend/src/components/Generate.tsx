@@ -11,6 +11,7 @@ import MenuComponent from './Menu'
 
 export default function Generate() {
     const [articleName, setArticleName] = useState("")
+    const [name, setName] = useState("")
     const [articlePrice, setArticlePrice] = useState("")
     
     let types = [
@@ -40,7 +41,8 @@ export default function Generate() {
           },
           body: JSON.stringify({
             type : selectedType.type,
-            name : articleName,
+            articleName : articleName,
+            name : name,
             price : articlePrice
           }),
         })
@@ -63,15 +65,32 @@ export default function Generate() {
         <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
+                Nom et Prénoms
+              </label>
+              <div className="mt-2">
+                <input
+                  id="name"
+                  name="name"
+                  type="text"
+                  autoComplete="name"
+                  required
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                />
+              </div>
+            </div>
+          <div>
+              <label htmlFor="name" className="block text-sm font-medium leading-6 text-gray-900">
                 Article
               </label>
               <div className="mt-2">
                 <input
-                  id="email"
-                  name="email"
+                  id="name"
+                  name="name"
                   type="text"
-                  autoComplete="name"
+                  autoComplete=""
                   required
                   value={articleName}
                   onChange={(e) => setArticleName(e.target.value)}

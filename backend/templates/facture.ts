@@ -1,11 +1,11 @@
-module.exports = ({ name, price }:{name:string,price:string}) => {
+module.exports = ({ name, price, articleName }:{name:string,price:string,articleName:string}) => {
    const today = new Date();
 return `
    <!doctype html>
    <html>
       <head>
          <meta charset="utf-8">
-         <title>PDF Result Template</title>
+         <title>Template de Facture PDF</title>
          <style>
             .invoice-box {
             max-width: 800px;
@@ -100,26 +100,26 @@ return `
                      <table>
                         <tr>
                            <td>
-                              Facture N°: ${today.getMilliseconds()}
+                              <strong>${name}</strong>
                            </td>
                            <td>
-                              Jour : ${today.getDay()}
+                           Facture N°: ${today.getMilliseconds()}
                            </td>
                         </tr>
                      </table>
                   </td>
                </tr>
                <tr class="heading">
-                  <td>Bought items:</td>
-                  <td>Price</td>
+                  <td>Article :</td>
+                  <td>Prix</td>
                </tr>
                <tr class="item">
-                  <td>${name}:</td>
-                  <td>${price}$</td>
+                  <td>${articleName}:</td>
+                  <td>${price}€</td>
                </tr>
             </table>
             <br />
-            <h1 class="justify-center">Total price: ${parseInt(price)}$</h1>
+            <h1 class="justify-center"> Total: ${parseInt(price)}€</h1>
          </div>
       </body>
    </html>

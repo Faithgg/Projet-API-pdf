@@ -1,8 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes,useNavigate } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 import './App.css';
-import Generate from './Generate';
-import Historique from './Home';
+import Generate from './components/Generate';
+import Historique from './components/Home';
 function App() {
   return (
 
