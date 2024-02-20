@@ -17,7 +17,7 @@
 
 ---
 
-[NB] :  Lancer le serveur avant le client
+[NB] :  Lancer le serveur avant le client, m'bon s'assurer que le serveur tourne 🥲 avant tout test.
 
 ## Explication du projet : 
 
