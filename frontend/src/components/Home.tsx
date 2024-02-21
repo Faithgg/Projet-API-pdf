@@ -13,7 +13,6 @@ export default function Historique() {
 
           const res = await response.json();
 
-          console.log(res);
           
           if (res.succes===true) {
             const newRes = pdfs.filter((element:any)=>element.id !==id)

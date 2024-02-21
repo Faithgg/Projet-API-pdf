@@ -1,0 +1,23 @@
+version: '3'
+services:
+  server:
+    build: ./backend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  client:
+    build: ./frontend
+    ports:
+      - "3001:3001"
+    depends_on:
+      - server
+
+  db:
+    image: mysql:latest
+    environment:
+      MYSQL_RANDOM_ROOT_PASSWORD: 1
+      MYSQL_DATABASE: api_PDF
+    ports:
+      - "3106"
